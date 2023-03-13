@@ -2,7 +2,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import io.restassured.response.ValidatableResponse;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -21,7 +20,6 @@ public class GetRandomUserTest {
     }
 
     @Test
-    @DisplayName("Check that order can not be created by unauthorized user")
     public void getRandomUserWithoutParametersTest() throws JsonProcessingException {
         ValidatableResponse response = client.getRandomUser();
         randomUser = client.deserialize(response);
